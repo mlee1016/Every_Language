@@ -1,5 +1,6 @@
 import csv
 import copy
+#import sqlite3
 from audio_ko import ko_polite_present, ko_polite_useful
 default_Ko_Ph = [[] for i in range(7)]
 with open(r'C:\Users\Owner\OneDrive\Desktop\css-HTML\open-project\Every_Language\korean_present_polite.csv', encoding="utf-8") as f:
@@ -49,6 +50,9 @@ class Korean():
         self.de_ko_List = ko_list
         self.de_ko_name = k_name
         Korean.se_ +=1
+        #self.connect = sqlite3.connect("Phrases")
+        #self.cur = self.connect.cursor()
+        #self.create_D()
     def customRuList(self, k_r_name, k_ru_List):
         self.ko_ru_List = k_ru_List
         self.ko_ru_name = k_r_name
@@ -61,8 +65,24 @@ class Korean():
         if self.de_ko_name == name:
             return self.de_ko_List
         return []
-    def return_ie():
-        return Korean.se_
+    #def return_ie():
+        #return Korean.se_
+    
+    #def create_D(self):
+        #self.cur.execute("""CREATE TABLE IF NOT EXISTS phrases(
+                         #korean TEXT,
+                         #answer TEXT)""")
+    #def insert(self,items):
+        #self.cur.execute("""INSERT OR IGNORE INTO phrases VALUES(?,?)""",items)
+        #self.connect.commit()
+    #def commit(self):
+        #self.connect.commit()
+    #def read_Data(self):
+        #self.cur.execute("""SELECT * FROM phrases""")
+        #row = self.cur.fetchall()
+        #return row
+
+
 korean_present_polite = Korean("Korean Present Polite Speech: ",copy.deepcopy(default_Ko_Ph[0]))
 #print(len(korean_present_polite.de_ko_List))
 
@@ -77,8 +97,10 @@ for i in range(len(col_)):
   str_kp.extend(col_[i].split())
 for d in range(len(str_kp)):
     korean_present_polite_words.add(str_kp[d])
-
-print(1, len(korean_present_polite_words))
+#korean_present_polite.insert(tuple(korean_present_polite.de_ko_List[0]))
+#for words in korean_present_polite.read_Data():
+    #print(words)
+#print(1, len(korean_present_polite_words))
 
 korean_past_polite = Korean("Korean Past Polite Speech: ",copy.deepcopy(default_Ko_Ph[1]))
 #print(len(korean_past_polite.de_ko_List))
@@ -96,7 +118,7 @@ for i in range(len(col_o2)):
 for d in range(len(str_kp2)):
     korean_past_polite_words.add(str_kp2[d])
 #print(len(str_kp2))
-print(2, len(list(korean_past_polite_words)))
+#print(2, len(list(korean_past_polite_words)))
 
 
 korean_future_polite = Korean("Korean Future Polite Speech: ",copy.deepcopy(default_Ko_Ph[2]))
@@ -118,7 +140,7 @@ for i in range(len(col_o3)):
 for d in range(len(str_kp3)):
     korean_future_polite_words.add(str_kp3[d])
 #print(len(str_kp3))
-print(3, len(list(korean_future_polite_words)))
+#print(3, len(list(korean_future_polite_words)))
 
 korean_past_polite2 = Korean("Korean Past Polite Speech 2: ",copy.deepcopy(default_Ko_Ph[3]))
 #print(len(korean_past_polite2.de_ko_List))
@@ -138,7 +160,7 @@ for d in range(len(str_kp4)):
     korean_past_polite2_words.add(str_kp4[d])
 
 #print(len(str_kp4))
-print(4, len(list(korean_past_polite2_words)))
+#print(4, len(list(korean_past_polite2_words)))
 
 korean_future_polite2 = Korean("Korean Future Polite Speech2: ",copy.deepcopy(default_Ko_Ph[4]))
 #print(len(korean_future_polite2.de_ko_List))
@@ -157,7 +179,7 @@ for i in range(len(col_o5)):
 for d in range(len(str_kp5)):
     korean_future_polite2_words.add(str_kp5[d])
 #print(len(str_kp5))
-print(5, len(list(korean_future_polite2_words)))
+#print(5, len(list(korean_future_polite2_words)))
 
 korean_useful_polite = Korean("Korean Useful Phrases: ",copy.deepcopy(default_Ko_Ph[5]))
 #print(len(korean_useful_polite.de_ko_List))
@@ -177,7 +199,7 @@ for i in range(len(col_o6)):
 for d in range(len(str_kp6)):
     korean_useful_polite_words.add(str_kp6[d])
 #print(len(str_kp6))
-print(6, len(list(korean_useful_polite_words)))
+#print(6, len(list(korean_useful_polite_words)))
 
 korean_particle_polite = Korean("Korean Particle Phrases: ",copy.deepcopy(default_Ko_Ph[6]))
 #print(len(korean_particle_polite.de_ko_List))
@@ -199,7 +221,7 @@ for i in range(len(col_o7)):
 for d in range(len(str_kp7)):
     korean_particle_polite_words.add(str_kp7[d])
 #print(len(str_kp7))
-print(7, len(list(korean_particle_polite_words)))
+#print(7, len(list(korean_particle_polite_words)))
 
 
 

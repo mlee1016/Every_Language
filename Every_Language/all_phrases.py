@@ -1,4 +1,8 @@
 import streamlit as st
+import sqlite3
+
+connection = sqlite3.connect("User_Phrases.db")
+c = connection.cursor()
 
 
 nav2 = {
@@ -79,6 +83,7 @@ nav2 = {
 
 }
 
+
 pg = st.navigation(nav2)
 pg.run()
-
+connection.close()
